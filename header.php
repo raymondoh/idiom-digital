@@ -23,7 +23,7 @@
             <?php endif; ?>
         </div>
 
-        <nav class="hidden items-center gap-8 text-sm font-medium text-slate-900 lg:flex" aria-label="<?php esc_attr_e( 'Primary Menu', 'boilerplate' ); ?>">
+        <nav class="hidden items-center gap-8 text-sm font-medium text-slate-900 lg:flex" aria-label="<?php esc_attr_e( 'Primary Menu', 'idiom-digital' ); ?>">
             <?php
             wp_nav_menu(
                 array(
@@ -45,7 +45,7 @@
                 aria-controls="mobile-nav"
                 aria-expanded="false"
             >
-                <span class="sr-only"><?php esc_html_e( 'Toggle navigation', 'boilerplate' ); ?></span>
+                <span class="sr-only"><?php esc_html_e( 'Toggle navigation', 'idiom-digital' ); ?></span>
                 <span id="icon-open" aria-hidden="true">
                     <svg class="h-6 w-6" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" viewBox="0 0 24 24">
                         <path d="M4 7h16M4 12h16M4 17h16" />

@@ -1,4 +1,4 @@
-# WordPress Boilerplate Theme
+# Idiom Digital
 
 A lean WordPress starter that pairs **Tailwind CSS 4**, **esbuild**, and clean PHP templates. It ships with a sticky header, mobile drawer navigation, and a modular hero layout you can adapt per project.
 
@@ -32,7 +32,7 @@ A lean WordPress starter that pairs **Tailwind CSS 4**, **esbuild**, and clean P
    npm run build
    ```
 
-5. Activate **WordPress Boilerplate 2025** in the WordPress admin.
+5. Activate **Idiom Digital** in the WordPress admin.
 
 ## 🧰 Build Commands
 
@@ -43,7 +43,7 @@ A lean WordPress starter that pairs **Tailwind CSS 4**, **esbuild**, and clean P
 | `npm run build:css` | Builds and minifies the Tailwind CSS bundle using `@tailwindcss/cli`. |
 | `npm run build:js` | Bundles and minifies the JavaScript entrypoint using esbuild. |
 
-## 🧭 Boilerplate Guide
+## 🧭 Theme Guide
 
 ### Mobile drawer navigation
 

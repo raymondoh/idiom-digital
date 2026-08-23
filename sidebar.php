@@ -2,7 +2,7 @@
 /**
  * The sidebar containing the main widget area
  *
- * @package WP_Boilerplate
+ * @package Idiom_Digital
  */
 
 if ( ! is_active_sidebar( 'sidebar-1' ) ) {

@@ -2,7 +2,7 @@
 /**
  * Template part for displaying post summaries on the blog page.
  *
- * @package WP_Boilerplate
+ * @package Idiom_Digital
  */
 ?>
 
@@ -38,7 +38,7 @@
 
         <div>
             <a class="inline-flex items-center gap-2 text-sm font-semibold text-blue-600 transition hover:text-blue-500" href="<?php the_permalink(); ?>">
-                <?php esc_html_e( 'Continue reading', 'boilerplate' ); ?>
+                <?php esc_html_e( 'Continue reading', 'idiom-digital' ); ?>
                 <svg class="h-4 w-4" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24">
                     <path d="M5 12h14" />
                     <path d="M13 6l6 6-6 6" />

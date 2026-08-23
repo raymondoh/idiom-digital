@@ -8,8 +8,8 @@
 
         the_post_navigation(
             array(
-                'prev_text' => '<span class="block text-xs uppercase tracking-wide text-slate-400">' . esc_html__( 'Previous', 'boilerplate' ) . '</span><span class="text-sm font-semibold text-slate-700">%title</span>',
-                'next_text' => '<span class="block text-xs uppercase tracking-wide text-slate-400">' . esc_html__( 'Next', 'boilerplate' ) . '</span><span class="text-sm font-semibold text-slate-700">%title</span>',
+                'prev_text' => '<span class="block text-xs uppercase tracking-wide text-slate-400">' . esc_html__( 'Previous', 'idiom-digital' ) . '</span><span class="text-sm font-semibold text-slate-700">%title</span>',
+                'next_text' => '<span class="block text-xs uppercase tracking-wide text-slate-400">' . esc_html__( 'Next', 'idiom-digital' ) . '</span><span class="text-sm font-semibold text-slate-700">%title</span>',
             )
         );
     endwhile;

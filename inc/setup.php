@@ -2,7 +2,7 @@
 /**
  * Theme setup callbacks.
  *
- * @package WordPress_Boilerplate_2025
+ * @package Idiom_Digital
  */
 
 if ( ! defined( 'ABSPATH' ) ) {
@@ -16,7 +16,7 @@ if ( ! function_exists( 'bp_theme_setup' ) ) {
     function bp_theme_setup() {
         register_nav_menus(
             array(
-                'primary' => __( 'Primary Menu', 'boilerplate' ),
+                'primary' => __( 'Primary Menu', 'idiom-digital' ),
             )
         );
 
@@ -49,7 +49,7 @@ add_action( 'after_setup_theme', 'bp_theme_setup' );
 
 if ( ! function_exists( 'bp_theme_body_class' ) ) {
     /**
-     * Append a helper body class for the boilerplate.
+     * Append a helper body class for the theme.
      *
      * @param array $classes Body classes.
      * @return array

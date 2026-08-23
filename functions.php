@@ -2,7 +2,7 @@
 /**
  * Theme bootstrap
  *
- * @package WordPress_Boilerplate_2025
+ * @package Idiom_Digital
  */
 
 if ( ! defined( 'ABSPATH' ) ) {

@@ -1,29 +1,10 @@
 /*
-Theme Name: WordPress Boilerplate 2025
-Theme URI: https://example.com/
-Author: Your Name
-Author URI: https://example.com/
-Description: A clean starter boilerplate theme with Tailwind and ESBuild.
-Version: 0.1.0
-License: GNU General Public License v2 or later
-License URI: http://www.gnu.org/licenses/gpl-2.0.html
-Text Domain: boilerplate
-Tags: boilerplate, tailwind, minimal
+Theme Name: Idiom Digital
+Theme URI: https://idiomdigital.com
+Author: Idiom Digital
+Author URI: https://idiomdigital.com
+Description: Custom WordPress theme for Idiom Digital.
+Version: 1.0.0
+Text Domain: idiom-digital
+Tags: custom-theme, tailwind
 */
-
-body {
-    font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-    color: #111827;
-    background-color: #ffffff;
-    line-height: 1.6;
-}
-
-a {
-    color: #2563eb;
-}
-
-a:hover,
-a:focus {
-    color: #1d4ed8;
-}
-

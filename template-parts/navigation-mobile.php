@@ -2,7 +2,7 @@
 /**
  * Off-canvas mobile navigation.
  *
- * @package WordPress_Boilerplate_2025
+ * @package Idiom_Digital
  */
 
 if ( ! defined( 'ABSPATH' ) ) {
@@ -63,16 +63,16 @@ if ( ! empty( $menu_markup ) ) {
         <?php endif; ?>
     </div>
 
-    <nav aria-label="<?php esc_attr_e( 'Mobile Primary Menu', 'boilerplate' ); ?>" class="flex-1 overflow-y-auto">
+    <nav aria-label="<?php esc_attr_e( 'Mobile Primary Menu', 'idiom-digital' ); ?>" class="flex-1 overflow-y-auto">
         <?php echo ! empty( $menu_markup ) ? wp_kses_post( $menu_markup ) : ''; ?>
     </nav>
 
     <div class="mt-auto flex flex-col gap-4">
         <a class="inline-flex items-center justify-center rounded-full bg-slate-900 px-5 py-3 text-base font-semibold text-white transition hover:bg-slate-700" href="<?php echo esc_url( home_url( '/contact' ) ); ?>">
-            <?php esc_html_e( 'Start a Project', 'boilerplate' ); ?>
+            <?php esc_html_e( 'Start a Project', 'idiom-digital' ); ?>
         </a>
         <p class="text-xs text-slate-500">
-            <?php esc_html_e( 'Update this call-to-action per project or replace it with something else.', 'boilerplate' ); ?>
+            <?php esc_html_e( 'Update this call-to-action per project or replace it with something else.', 'idiom-digital' ); ?>
         </p>
     </div>
 </aside>

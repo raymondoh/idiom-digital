@@ -2,7 +2,7 @@
 /**
  * Template part for displaying a single post's content.
  *
- * @package WP_Boilerplate
+ * @package Idiom_Digital
  */
 ?>
 
@@ -26,7 +26,7 @@
                     echo wp_kses_post(
                         sprintf(
                             /* translators: %s: author name. */
-                            __( 'by %s', 'boilerplate' ),
+                            __( 'by %s', 'idiom-digital' ),
                             get_the_author_posts_link()
                         )
                     );
@@ -41,7 +41,7 @@
 
             wp_link_pages(
                 array(
-                    'before' => '<div class="mt-8 space-x-2 text-sm font-medium">' . esc_html__( 'Pages:', 'boilerplate' ),
+                    'before' => '<div class="mt-8 space-x-2 text-sm font-medium">' . esc_html__( 'Pages:', 'idiom-digital' ),
                     'after'  => '</div>',
                 )
             );

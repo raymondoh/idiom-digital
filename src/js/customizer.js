@@ -35,10 +35,5 @@
     })
   })
 
-  // Footer copyright text
-  wp.customize("wp_boilerplate_footer_copyright", (value) => {
-    value.bind((to) => {
-      $(".site-info p").text(to)
-    })
-  })
+
 })(window.jQuery)
