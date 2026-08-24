@@ -1,79 +1,94 @@
 <?php
 /**
- * Off-canvas mobile navigation.
+ * Idiom Digital mobile navigation.
  *
  * @package Idiom_Digital
  */
 
 if ( ! defined( 'ABSPATH' ) ) {
-    exit;
-}
-
-$menu_args = array(
-    'theme_location' => 'primary',
-    'menu_id'        => 'mobile-primary-menu',
-    'menu_class'     => 'flex flex-col gap-6 text-lg font-medium text-slate-900',
-    'container'      => '',
-    'echo'           => false,
-    'depth'          => 1,
-);
-
-if ( has_nav_menu( 'primary' ) ) {
-    $menu_markup = wp_nav_menu( $menu_args );
-} else {
-    $menu_markup = bp_fallback_menu(
-        array_merge(
-            $menu_args,
-            array(
-                'echo' => false,
-            )
-        )
-    );
-}
-
-if ( ! empty( $menu_markup ) ) {
-    $menu_markup = preg_replace_callback(
-        '/<li([^>]*)class="([^"]*)"/i',
-        static function( $matches ) {
-            $classes = $matches[2];
-            if ( false === strpos( $classes, 'mobile-stagger' ) ) {
-                $classes .= ' mobile-stagger';
-            }
-
-            return '<li' . $matches[1] . 'class="' . $classes . '"';
-        },
-        $menu_markup
-    );
-
-    $menu_markup = preg_replace(
-        '/<li(?![^>]*class=")/i',
-        '<li class="mobile-stagger"',
-        $menu_markup
-    );
+	exit;
 }
 ?>
-<div id="mobile-backdrop" class="fixed inset-0 z-40 bg-slate-900/60 opacity-0 pointer-events-none transition-opacity duration-300 lg:hidden" hidden></div>
 
-<aside id="mobile-nav" class="fixed inset-y-0 right-0 z-50 flex w-full max-w-xs translate-x-full flex-col gap-6 bg-white px-6 pb-8 pt-6 shadow-xl opacity-0 pointer-events-none transition-all duration-300 lg:hidden" aria-hidden="true">
-    <div class="flex flex-col gap-1">
-        <span class="text-sm font-semibold uppercase tracking-wide text-slate-500"><?php bloginfo( 'name' ); ?></span>
-        <?php $tagline = get_bloginfo( 'description' ); ?>
-        <?php if ( ! empty( $tagline ) ) : ?>
-            <span class="text-xs text-slate-400"><?php echo esc_html( $tagline ); ?></span>
-        <?php endif; ?>
-    </div>
+<div
+	id="mobile-backdrop"
+	class="fixed inset-0 z-30 bg-[#151515]/10 opacity-0 pointer-events-none transition-opacity duration-300 lg:hidden"
+	hidden
+></div>
 
-    <nav aria-label="<?php esc_attr_e( 'Mobile Primary Menu', 'idiom-digital' ); ?>" class="flex-1 overflow-y-auto">
-        <?php echo ! empty( $menu_markup ) ? wp_kses_post( $menu_markup ) : ''; ?>
-    </nav>
+<aside
+	id="mobile-nav"
+	class="fixed inset-x-0 bottom-0 top-[88px] z-40 flex translate-x-full flex-col bg-[#F5F3EE] px-6 pb-8 pt-10 opacity-0 pointer-events-none transition-all duration-300 sm:px-8 lg:hidden"
+	aria-hidden="true"
+>
+	<nav
+		class="flex flex-col gap-4 text-[clamp(2.75rem,12vw,5rem)] font-medium leading-[1.05] tracking-[-0.05em] text-[#151515] [&_a]:no-underline"
+		aria-label="<?php esc_attr_e( 'Mobile Primary Menu', 'idiom-digital' ); ?>"
+	>
+		<?php if ( has_nav_menu( 'primary' ) ) : ?>
 
-    <div class="mt-auto flex flex-col gap-4">
-        <a class="inline-flex items-center justify-center rounded-full bg-slate-900 px-5 py-3 text-base font-semibold text-white transition hover:bg-slate-700" href="<?php echo esc_url( home_url( '/contact' ) ); ?>">
-            <?php esc_html_e( 'Start a Project', 'idiom-digital' ); ?>
-        </a>
-        <p class="text-xs text-slate-500">
-            <?php esc_html_e( 'Update this call-to-action per project or replace it with something else.', 'idiom-digital' ); ?>
-        </p>
-    </div>
+			<?php
+			wp_nav_menu(
+				array(
+					'theme_location' => 'primary',
+					'menu_class'     => 'flex flex-col gap-1',
+					'container'      => false,
+					'depth'          => 1,
+				)
+			);
+			?>
+
+		<?php else : ?>
+
+			<a
+				class="mobile-stagger transition-opacity hover:opacity-50"
+				href="<?php echo esc_url( home_url( '/work' ) ); ?>"
+			>
+				Work
+			</a>
+
+			<a
+				class="mobile-stagger transition-opacity hover:opacity-50"
+				href="<?php echo esc_url( home_url( '/services' ) ); ?>"
+			>
+				Services
+			</a>
+
+			<a
+				class="mobile-stagger transition-opacity hover:opacity-50"
+				href="<?php echo esc_url( home_url( '/ventures' ) ); ?>"
+			>
+				Ventures
+			</a>
+
+			<a
+				class="mobile-stagger transition-opacity hover:opacity-50"
+				href="<?php echo esc_url( home_url( '/about' ) ); ?>"
+			>
+				About
+			</a>
+
+			<a
+				class="mobile-stagger transition-opacity hover:opacity-50"
+				href="<?php echo esc_url( home_url( '/contact' ) ); ?>"
+			>
+				Contact
+			</a>
+
+		<?php endif; ?>
+	</nav>
+
+	<div class="mt-auto border-t border-[#151515]/15 pt-6">
+		<p class="mb-3 text-sm text-[#747474]">
+			Have something worth building?
+		</p>
+
+		<a
+			href="<?php echo esc_url( home_url( '/contact' ) ); ?>"
+			class="inline-flex items-center gap-2 text-lg font-medium text-[#151515] no-underline transition-opacity hover:opacity-50"
+		>
+			Start a project
+			<span aria-hidden="true">→</span>
+		</a>
+	</div>
 </aside>
-
