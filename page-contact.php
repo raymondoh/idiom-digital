@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Template for the Contact page.
  *
@@ -7,8 +8,8 @@
 
 get_header();
 
-$contact_status = isset( $_GET['contact'] )
-	? sanitize_key( wp_unslash( $_GET['contact'] ) )
+$contact_status = isset($_GET['contact'])
+	? sanitize_key(wp_unslash($_GET['contact']))
 	: '';
 ?>
 
@@ -37,33 +38,31 @@ $contact_status = isset( $_GET['contact'] )
 		</div>
 	</section>
 
-	<?php if ( 'success' === $contact_status || 'error' === $contact_status ) : ?>
-	<section class="px-6 pb-8 sm:px-8 lg:px-12 lg:pb-12">
-		<div class="mx-auto grid max-w-[1600px] grid-cols-1 gap-8 lg:grid-cols-12 lg:gap-8">
+	<?php if ('success' === $contact_status || 'error' === $contact_status) : ?>
+		<section class="px-6 pb-8 sm:px-8 lg:px-12 lg:pb-12">
+			<div class="mx-auto grid max-w-[1600px] grid-cols-1 gap-8 lg:grid-cols-12 lg:gap-8">
 
-			<div class="lg:col-span-7 lg:col-start-5">
+				<div class="lg:col-span-7 lg:col-start-5">
 
-				<?php if ( 'success' === $contact_status ) : ?>
-					<div
-						class="border-l-2 border-[#93CF9E] py-2 pl-5 text-lg text-[#151515]"
-						role="status"
-					>
-						Thanks — your enquiry has been sent.
-					</div>
-				<?php else : ?>
-					<div
-						class="border-l-2 border-[#151515] py-2 pl-5 text-lg text-[#5B5B5B]"
-						role="alert"
-					>
-						Something went wrong. Please check the form and try again.
-					</div>
-				<?php endif; ?>
+					<?php if ('success' === $contact_status) : ?>
+						<div
+							class="border-l-2 border-[#93CF9E] py-2 pl-5 text-lg text-[#151515]"
+							role="status">
+							Thanks — your enquiry has been sent.
+						</div>
+					<?php else : ?>
+						<div
+							class="border-l-2 border-[#151515] py-2 pl-5 text-lg text-[#5B5B5B]"
+							role="alert">
+							Something went wrong. Please check the form and try again.
+						</div>
+					<?php endif; ?>
+
+				</div>
 
 			</div>
-
-		</div>
-	</section>
-<?php endif; ?>
+		</section>
+	<?php endif; ?>
 
 	<section class="px-6 pb-24 sm:px-8 lg:px-12 lg:pb-32">
 		<div class="mx-auto grid max-w-[1600px] grid-cols-1 gap-16 border-t border-[#D5D1C8] pt-16 lg:grid-cols-12 lg:gap-8 lg:pt-24">
@@ -76,27 +75,24 @@ $contact_status = isset( $_GET['contact'] )
 
 			<div class="lg:col-span-7 lg:col-start-5">
 
-				
+
 
 				<form
 					class="space-y-10"
-					action="<?php echo esc_url( admin_url( 'admin-post.php' ) ); ?>"
-					method="post"
-				>
+					action="<?php echo esc_url(admin_url('admin-post.php')); ?>"
+					method="post">
 
 					<input
 						type="hidden"
 						name="action"
-						value="idiom_contact_form"
-					>
+						value="idiom_contact_form">
 
-					<?php wp_nonce_field( 'idiom_contact_form', 'idiom_contact_nonce' ); ?>
+					<?php wp_nonce_field('idiom_contact_form', 'idiom_contact_nonce'); ?>
 
 					<div>
 						<label
 							for="contact-name"
-							class="mb-3 block text-sm font-medium text-[#747474]"
-						>
+							class="mb-3 block text-sm font-medium text-[#747474]">
 							Name
 						</label>
 
@@ -107,15 +103,13 @@ $contact_status = isset( $_GET['contact'] )
 							autocomplete="name"
 							required
 							class="w-full border-0 border-b border-[#BDB8AE] bg-transparent px-0 py-4 text-2xl text-[#151515] outline-none transition-colors placeholder:text-[#A6A19A] focus:border-[#151515] focus:ring-0"
-							placeholder="Your name"
-						>
+							placeholder="Your name">
 					</div>
 
 					<div>
 						<label
 							for="contact-email"
-							class="mb-3 block text-sm font-medium text-[#747474]"
-						>
+							class="mb-3 block text-sm font-medium text-[#747474]">
 							Email
 						</label>
 
@@ -126,15 +120,13 @@ $contact_status = isset( $_GET['contact'] )
 							autocomplete="email"
 							required
 							class="w-full border-0 border-b border-[#BDB8AE] bg-transparent px-0 py-4 text-2xl text-[#151515] outline-none transition-colors placeholder:text-[#A6A19A] focus:border-[#151515] focus:ring-0"
-							placeholder="you@company.com"
-						>
+							placeholder="you@company.com">
 					</div>
 
 					<div>
 						<label
 							for="contact-company"
-							class="mb-3 block text-sm font-medium text-[#747474]"
-						>
+							class="mb-3 block text-sm font-medium text-[#747474]">
 							Company or organisation
 							<span class="font-normal">(optional)</span>
 						</label>
@@ -145,15 +137,13 @@ $contact_status = isset( $_GET['contact'] )
 							type="text"
 							autocomplete="organization"
 							class="w-full border-0 border-b border-[#BDB8AE] bg-transparent px-0 py-4 text-2xl text-[#151515] outline-none transition-colors placeholder:text-[#A6A19A] focus:border-[#151515] focus:ring-0"
-							placeholder="Company name"
-						>
+							placeholder="Company name">
 					</div>
 
 					<div>
 						<label
 							for="contact-project"
-							class="mb-3 block text-sm font-medium text-[#747474]"
-						>
+							class="mb-3 block text-sm font-medium text-[#747474]">
 							What are you looking to build?
 						</label>
 
@@ -163,15 +153,13 @@ $contact_status = isset( $_GET['contact'] )
 							rows="5"
 							required
 							class="w-full resize-y border-0 border-b border-[#BDB8AE] bg-transparent px-0 py-4 text-2xl leading-relaxed text-[#151515] outline-none transition-colors placeholder:text-[#A6A19A] focus:border-[#151515] focus:ring-0"
-							placeholder="A little about the project, problem or idea."
-						></textarea>
+							placeholder="A little about the project, problem or idea."></textarea>
 					</div>
 
 					<div>
 						<label
 							for="contact-budget"
-							class="mb-3 block text-sm font-medium text-[#747474]"
-						>
+							class="mb-3 block text-sm font-medium text-[#747474]">
 							Budget
 							<span class="font-normal">(optional)</span>
 						</label>
@@ -179,8 +167,7 @@ $contact_status = isset( $_GET['contact'] )
 						<select
 							id="contact-budget"
 							name="budget"
-							class="w-full border-0 border-b border-[#BDB8AE] bg-transparent px-0 py-4 text-xl text-[#151515] outline-none transition-colors focus:border-[#151515] focus:ring-0"
-						>
+							class="w-full border-0 border-b border-[#BDB8AE] bg-transparent px-0 py-4 text-xl text-[#151515] outline-none transition-colors focus:border-[#151515] focus:ring-0">
 							<option value="">Select a range</option>
 							<option value="under-5k">Under £5,000</option>
 							<option value="5k-10k">£5,000–£10,000</option>
@@ -193,13 +180,11 @@ $contact_status = isset( $_GET['contact'] )
 					<div class="pt-4">
 						<button
 							type="submit"
-							class="group inline-flex items-center gap-3 text-lg font-medium text-[#151515]"
-						>
+							class="group inline-flex items-center gap-3 text-lg font-medium text-[#151515]">
 							Send enquiry
 							<span
 								class="inline-block transition-transform duration-200 group-hover:translate-x-2"
-								aria-hidden="true"
-							>
+								aria-hidden="true">
 								→
 							</span>
 						</button>
@@ -245,20 +230,20 @@ $contact_status = isset( $_GET['contact'] )
 				</p>
 			</div>
 
-			<div class="lg:col-span-8 lg:col-start-5">
+			<div class="min-w-0 lg:col-span-8 lg:col-start-5">
 				<p class="m-0 text-lg text-[#5B5B5B]">
 					Prefer email?
 				</p>
-
 				<a
 					href="mailto:hello@idiomdigital.com"
-					class="group mt-5 inline-flex items-center gap-3 text-[clamp(2.5rem,5vw,5rem)] font-medium leading-none tracking-[-0.05em] text-[#151515] no-underline"
-				>
-					hello@idiomdigital.com
+					class="group mt-5 flex max-w-full flex-wrap items-baseline gap-x-3 gap-y-2 text-[clamp(1.9rem,8vw,5rem)] font-medium leading-none tracking-[-0.05em] text-[#151515] no-underline">
+					<span class="min-w-0 [overflow-wrap:anywhere]">
+						hello@idiomdigital.com
+					</span>
+
 					<span
-						class="inline-block text-[#93CF9E] transition-transform duration-200 group-hover:translate-x-2"
-						aria-hidden="true"
-					>
+						class="inline-block shrink-0 text-[#93CF9E] transition-transform duration-200 group-hover:translate-x-2"
+						aria-hidden="true">
 						→
 					</span>
 				</a>

@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Template for the About page.
  *
@@ -172,14 +173,12 @@ get_header();
 				</p>
 
 				<a
-					href="<?php echo esc_url( home_url( '/ventures/' ) ); ?>"
-					class="group mt-8 inline-flex items-center gap-3 font-medium text-[#151515] no-underline"
-				>
+					href="<?php echo esc_url(home_url('/ventures/')); ?>"
+					class="group mt-8 inline-flex items-center gap-3 font-medium text-[#151515] no-underline">
 					Explore our ventures
 					<span
 						class="inline-block transition-transform duration-200 group-hover:translate-x-2"
-						aria-hidden="true"
-					>
+						aria-hidden="true">
 						→
 					</span>
 				</a>
@@ -223,14 +222,12 @@ get_header();
 
 			<div class="flex items-end lg:col-span-3 lg:col-start-10">
 				<a
-					href="<?php echo esc_url( home_url( '/contact/' ) ); ?>"
-					class="group inline-flex items-center gap-3 text-lg font-medium text-[#F5F3EE] no-underline transition-colors duration-200 hover:text-[#93CF9E]"
-				>
+					href="<?php echo esc_url(home_url('/contact/')); ?>"
+					class="group inline-flex items-center gap-3 text-lg font-medium text-[#F5F3EE] no-underline transition-colors duration-200 hover:text-[#93CF9E]">
 					Start a project
 					<span
 						class="inline-block transition-transform duration-200 group-hover:translate-x-2"
-						aria-hidden="true"
-					>
+						aria-hidden="true">
 						→
 					</span>
 				</a>

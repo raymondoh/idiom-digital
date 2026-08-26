@@ -10,7 +10,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 ?>
 
-<footer class="bg-[#F5F3EE] text-[#151515]">
+<footer class="border-t border-[#D5D1C8] bg-[#F5F3EE] text-[#151515]">
 	<div class="mx-auto w-full max-w-[1600px] px-6 py-12 sm:px-8 lg:px-12 lg:py-16">
 
 		<div class="grid grid-cols-1 gap-12 border-b border-[#151515]/15 pb-12 lg:grid-cols-12 lg:gap-8">
