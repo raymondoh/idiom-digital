@@ -1,150 +1,233 @@
 @import "tailwindcss";
 
 /* -----------------------------
-   Base: sensible defaults
+   Fonts
 ----------------------------- */
+
+@font-face {
+	font-family: "Instrument Sans";
+	src: url("../../assets/fonts/instrument-sans/InstrumentSans-Variable.ttf") format("truetype");
+	font-style: normal;
+	font-weight: 100 900;
+	font-display: swap;
+}
+
+@font-face {
+	font-family: "Instrument Sans";
+	src: url("../../assets/fonts/instrument-sans/InstrumentSans-Italic-Variable.ttf") format("truetype");
+	font-style: italic;
+	font-weight: 100 900;
+	font-display: swap;
+}
+
+@theme {
+	--font-sans: "Instrument Sans", sans-serif;
+}
+
+/* -----------------------------
+   Base
+----------------------------- */
+
 @layer base {
-  html {
-    scroll-behavior: smooth;
-  }
-  body {
-    @apply antialiased text-gray-800 bg-white;
-  }
+	html {
+		scroll-behavior: smooth;
+		font-family: "Instrument Sans", sans-serif;
+	}
 
-  /* Typography */
-  h1,
-  h2,
-  h3,
-  h4,
-  h5,
-  h6 {
-    @apply font-semibold text-gray-900;
-  }
-  h1 {
-    @apply text-4xl md:text-5xl leading-tight;
-  }
-  h2 {
-    @apply text-3xl md:text-4xl leading-snug;
-  }
-  h3 {
-    @apply text-2xl md:text-3xl;
-  }
+	body {
+		@apply antialiased;
+		background-color: #f5f3ee;
+		color: #151515;
+	}
 
-  p {
-    @apply leading-relaxed;
-  }
-  a {
-    @apply underline underline-offset-4 decoration-gray-300 hover:decoration-gray-500;
-  }
+	h1,
+	h2,
+	h3,
+	h4,
+	h5,
+	h6 {
+		color: inherit;
+		font: inherit;
+	}
 
-  /* Media */
-  img,
-  video,
-  canvas,
-  svg {
-    @apply max-w-full h-auto;
-  }
+	p {
+		margin: 0;
+	}
 
-  /* Accessible focus */
-  :focus-visible {
-    @apply outline-none ring-2 ring-offset-2 ring-blue-500 ring-offset-white;
-  }
-  @media (prefers-reduced-motion: reduce) {
-    * {
-      animation-duration: 0.001ms !important;
-      animation-iteration-count: 1 !important;
-      transition-duration: 0.001ms !important;
-    }
-  }
+	a {
+		color: inherit;
+	}
+
+	img,
+	video,
+	canvas,
+	svg {
+		@apply h-auto max-w-full;
+	}
+
+	:focus-visible {
+		outline: 2px solid #93cf9e;
+		outline-offset: 3px;
+	}
+
+	@media (prefers-reduced-motion: reduce) {
+		*,
+		*::before,
+		*::after {
+			scroll-behavior: auto !important;
+			animation-duration: 0.001ms !important;
+			animation-iteration-count: 1 !important;
+			transition-duration: 0.001ms !important;
+		}
+	}
 }
 
 /* -----------------------------
-   Components: tiny, reusable
+   Idiom components
 ----------------------------- */
+
 @layer components {
-  /* Layout helpers */
-  .container {
-    @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
-  }
-  .section {
-    @apply py-12 sm:py-16 lg:py-24;
-  }
+	.idiom-dot {
+		display: inline-block;
+		width: 9px;
+		height: 9px;
+		flex: 0 0 9px;
+		border-radius: 9999px;
+		background-color: #93cf9e;
+	}
 
-  /* Card */
-  .card {
-    @apply bg-white rounded-xl shadow-sm ring-1 ring-gray-100 overflow-hidden;
-  }
-  .card-body {
-    @apply p-6;
-  }
-  .card-title {
-    @apply text-xl font-semibold text-gray-900;
-  }
+	/* Desktop navigation */
 
-  /* Buttons */
-  .btn {
-    @apply inline-flex items-center gap-2 rounded-md px-4 py-2 text-sm font-medium transition-colors focus-visible:ring-2 focus-visible:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none;
-  }
-  .btn-primary {
-    @apply bg-gray-900 text-white hover:bg-gray-800;
-  }
-  .btn-secondary {
-    @apply bg-gray-100 text-gray-900 hover:bg-gray-200;
-  }
-  .btn-ghost {
-    @apply bg-transparent text-gray-900 hover:bg-gray-100;
-  }
+	.idiom-primary-nav a {
+		position: relative;
+		display: inline-flex;
+		align-items: center;
+		gap: 0.45rem;
+		color: inherit;
+		text-decoration: none;
+	}
 
-  /* Badges */
-  .badge {
-    @apply inline-flex items-center rounded-full px-2.5 py-1 text-xs font-medium bg-gray-100 text-gray-800;
-  }
+	.idiom-primary-nav a::after {
+		content: "";
+		width: 6px;
+		height: 6px;
+		flex: 0 0 6px;
+		border-radius: 9999px;
+		background-color: #93cf9e;
+		opacity: 0;
+		transform: scale(0.75);
+		transition:
+			opacity 180ms ease,
+			transform 180ms ease;
+	}
 
-  /* Forms (lightweight, works without @tailwindcss/forms) */
-  .form-label {
-    @apply block text-sm font-medium text-gray-700 mb-1;
-  }
-  .form-input,
-  .form-textarea,
-  .form-select {
-    @apply w-full rounded-md border border-gray-300 bg-white px-3 py-2 text-sm text-gray-900 shadow-sm placeholder:text-gray-400 focus:border-blue-500 focus:ring-2 focus:ring-blue-500 focus:ring-offset-0;
-  }
-  .form-textarea {
-    @apply min-h-[120px];
-  }
-  .form-help {
-    @apply mt-1 text-xs text-gray-500;
-  }
+	.idiom-primary-nav a:hover,
+	.idiom-primary-nav a:focus-visible {
+		text-decoration: none;
+	}
 
-  /* Nav link (nice for mobile menus) */
-  .nav-link {
-    @apply block rounded-md px-3 py-2 text-sm font-medium text-gray-800 hover:bg-gray-100;
-  }
-  /* Dot */
-  .idiom-dot {
-  display: inline-block;
-  width: 9px;
-  height: 9px;
-  flex: 0 0 9px;
-  border-radius: 9999px;
-  background-color: #93cf9e;
-}
+	.idiom-primary-nav a:hover::after,
+	.idiom-primary-nav a:focus-visible::after,
+	.idiom-primary-nav .current-menu-item > a::after,
+	.idiom-primary-nav .current_page_item > a::after {
+		opacity: 1;
+		transform: scale(1);
+	}
+
+	/* Mobile navigation */
+
+	.idiom-mobile-nav a {
+		position: relative;
+		display: inline-flex;
+		align-items: center;
+		width: fit-content;
+		gap: 0.6rem;
+		color: inherit;
+		text-decoration: none;
+	}
+
+	.idiom-mobile-nav a::after {
+		content: "";
+		width: 8px;
+		height: 8px;
+		flex: 0 0 8px;
+		border-radius: 9999px;
+		background-color: #93cf9e;
+		opacity: 0;
+		transform: scale(0.75);
+		transition:
+			opacity 180ms ease,
+			transform 180ms ease;
+	}
+
+	.idiom-mobile-nav a:focus-visible::after,
+	.idiom-mobile-nav a:active::after,
+	.idiom-mobile-nav .current-menu-item > a::after,
+	.idiom-mobile-nav .current_page_item > a::after {
+		opacity: 1;
+		transform: scale(1);
+	}
+
+	.idiom-mobile-nav a:hover {
+		text-decoration: none;
+	}
 }
 
 /* -----------------------------
-   Utilities: tiny single-purpose
+   Utilities
 ----------------------------- */
+
 @layer utilities {
-  .text-balance {
-    text-wrap: balance;
-  } /* better headings wrapping */
-  .text-pretty {
-    text-wrap: pretty;
-  } /* nicer rag for paragraphs */
-  .screen-reader-text {
-    @apply sr-only;
-  } /* WP alias */
-  .shadow-hover {
-    @apply transition-shadow hover:shadow-lg;
-  }
+	.text-balance {
+		text-wrap: balance;
+	}
+
+	.text-pretty {
+		text-wrap: pretty;
+	}
+
+	.screen-reader-text {
+		@apply sr-only;
+	}
+
+	/* Reveal animation */
+
+	.reveal {
+		opacity: 0;
+		transform: translateY(14px);
+		transition:
+			opacity 500ms ease,
+			transform 500ms ease;
+	}
+
+	.reveal.is-visible {
+		opacity: 1;
+		transform: translateY(0);
+	}
+
+	.reveal-delay-1 {
+		transition-delay: 120ms;
+	}
+
+	.reveal-image {
+		opacity: 0;
+		transform: scale(0.985);
+		transition:
+			opacity 600ms ease,
+			transform 600ms ease;
+	}
+
+	.reveal-image.is-visible {
+		opacity: 1;
+		transform: scale(1);
+	}
+
+	@media (prefers-reduced-motion: reduce) {
+		.reveal,
+		.reveal-image {
+			opacity: 1;
+			transform: none;
+			transition: none;
+		}
+	}
 }

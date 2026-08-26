@@ -19,7 +19,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 					/work
 				</p>
 
-				<h2 class="m-0 text-2xl font-medium tracking-[-0.03em]">
+				<h2 class="reveal m-0 text-2xl font-medium tracking-[-0.03em]">
 					Selected work
 				</h2>
 			</div>
@@ -33,7 +33,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 				01 / Plumbers Portal
 			</p>
 
-			<div class="relative overflow-hidden bg-[#DDE6F3] px-4 py-8 sm:px-8 sm:py-12 lg:px-16 lg:py-20">
+			<div class="reveal-image relative overflow-hidden bg-[#DDE6F3] px-4 py-8 sm:px-8 sm:py-12 lg:px-16 lg:py-20">
 
 				<img
 					src="<?php echo esc_url( get_template_directory_uri() . '/assets/images/work/plumbers-portal/plumbers-portal-home.png' ); ?>"

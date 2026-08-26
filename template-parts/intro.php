@@ -21,7 +21,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 </div>
 
 <div class="order-1 lg:order-2 lg:col-span-7 lg:col-start-6">
-	<h2 class="m-0 max-w-[11ch] text-[clamp(3rem,6vw,6.5rem)] font-medium leading-[0.95] tracking-[-0.055em] text-[#151515]">
+	<h2 class="reveal reveal-delay-1 m-0 max-w-[11ch] text-[clamp(3rem,6vw,6.5rem)] font-medium leading-[0.95] tracking-[-0.055em] text-[#151515]">
 		We turn ideas into useful, well-made digital products.
 	</h2>
 </div>

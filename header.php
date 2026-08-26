@@ -13,15 +13,18 @@
 	<div class="mx-auto flex h-[88px] w-full max-w-[1600px] items-center justify-between px-6 sm:px-8 lg:px-12">
 <a
 	href="<?php echo esc_url( home_url( '/' ) ); ?>"
-	class="inline-flex items-baseline gap-1.5 text-2xl font-medium tracking-[-0.04em] text-[#151515] no-underline"
+	class="inline-flex no-underline"
 	aria-label="<?php esc_attr_e( 'Idiom Digital home', 'idiom-digital' ); ?>"
 >
-	<span>idiom digital</span>
-	<span class="idiom-dot" aria-hidden="true"></span>
+	<img
+		src="<?php echo esc_url( get_template_directory_uri() . '/assets/brand/logo/idiom-digital-logo-on-light.svg' ); ?>"
+		alt="Idiom Digital"
+		class="block h-auto w-[190px] sm:w-[210px]"
+	>
 </a>
 
 		<nav
-			class="hidden items-center gap-8 text-[15px] font-medium lg:flex"
+			class="idiom-primary-nav hidden items-center gap-8 text-[15px] font-medium lg:flex"
 			aria-label="<?php esc_attr_e( 'Primary Menu', 'idiom-digital' ); ?>"
 		>
 			<?php if ( has_nav_menu( 'primary' ) ) : ?>
@@ -39,23 +42,23 @@
 
 			<?php else : ?>
 
-				<a class="no-underline transition-opacity hover:opacity-50" href="<?php echo esc_url( home_url( '/work' ) ); ?>">
+				<a class="idiom-nav-link no-underline" href="<?php echo esc_url( home_url( '/work' ) ); ?>">
 					Work
 				</a>
 
-				<a class="no-underline transition-opacity hover:opacity-50" href="<?php echo esc_url( home_url( '/services' ) ); ?>">
+				<a class="idiom-nav-link no-underline" href="<?php echo esc_url( home_url( '/services' ) ); ?>">
 					Services
 				</a>
 
-				<a class="no-underline transition-opacity hover:opacity-50" href="<?php echo esc_url( home_url( '/ventures' ) ); ?>">
+				<a class="idiom-nav-link no-underline" href="<?php echo esc_url( home_url( '/ventures' ) ); ?>">
 					Ventures
 				</a>
 
-				<a class="no-underline transition-opacity hover:opacity-50" href="<?php echo esc_url( home_url( '/about' ) ); ?>">
+				<a class="idiom-nav-link no-underline" href="<?php echo esc_url( home_url( '/about' ) ); ?>">
 					About
 				</a>
 
-				<a class="no-underline transition-opacity hover:opacity-50" href="<?php echo esc_url( home_url( '/contact' ) ); ?>">
+				<a class="idiom-nav-link no-underline" href="<?php echo esc_url( home_url( '/contact' ) ); ?>">
 					Contact
 				</a>
 

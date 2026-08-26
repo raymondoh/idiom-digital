@@ -17,13 +17,16 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 			<div class="lg:col-span-4">
 				<a
-					href="<?php echo esc_url( home_url( '/' ) ); ?>"
-					class="inline-flex items-center gap-1.5 text-2xl font-medium tracking-[-0.04em] text-[#151515] no-underline"
-					aria-label="<?php esc_attr_e( 'Idiom Digital home', 'idiom-digital' ); ?>"
-				>
-					<span>idiom digital</span>
-					<span class="idiom-dot" aria-hidden="true"></span>
-				</a>
+	href="<?php echo esc_url( home_url( '/' ) ); ?>"
+	class="inline-flex no-underline"
+	aria-label="<?php esc_attr_e( 'Idiom Digital home', 'idiom-digital' ); ?>"
+>
+	<img
+		src="<?php echo esc_url( get_template_directory_uri() . '/assets/brand/logo/idiom-digital-logo-on-light.svg' ); ?>"
+		alt="Idiom Digital"
+		class="block h-auto w-[150px] sm:w-[265px]"
+	>
+</a>
 			</div>
 
 			<div class="lg:col-span-3 lg:col-start-7">

@@ -22,9 +22,9 @@ if ( ! defined( 'ABSPATH' ) ) {
 	aria-hidden="true"
 >
 	<nav
-		class="flex flex-col gap-4 text-[clamp(2.75rem,12vw,5rem)] font-medium leading-[1.05] tracking-[-0.05em] text-[#151515] [&_a]:no-underline"
-		aria-label="<?php esc_attr_e( 'Mobile Primary Menu', 'idiom-digital' ); ?>"
-	>
+	class="idiom-mobile-nav flex flex-col gap-4 text-[clamp(2.75rem,12vw,5rem)] font-medium leading-[1.05] tracking-[-0.05em] text-[#151515] [&_a]:no-underline"
+	aria-label="<?php esc_attr_e( 'Mobile Primary Menu', 'idiom-digital' ); ?>"
+>
 		<?php if ( has_nav_menu( 'primary' ) ) : ?>
 
 			<?php
