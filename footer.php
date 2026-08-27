@@ -1,11 +1,12 @@
 <?php
+
 /**
  * Idiom Digital footer.
  *
  * @package Idiom_Digital
  */
 
-if ( ! defined( 'ABSPATH' ) ) {
+if (! defined('ABSPATH')) {
 	exit;
 }
 ?>
@@ -17,40 +18,37 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 			<div class="lg:col-span-4">
 				<a
-	href="<?php echo esc_url( home_url( '/' ) ); ?>"
-	class="inline-flex no-underline"
-	aria-label="<?php esc_attr_e( 'Idiom Digital home', 'idiom-digital' ); ?>"
->
-	<img
-		src="<?php echo esc_url( get_template_directory_uri() . '/assets/brand/logo/idiom-digital-logo-on-light.svg' ); ?>"
-		alt="Idiom Digital"
-		class="block h-auto w-[150px] sm:w-[265px]"
-	>
-</a>
+					href="<?php echo esc_url(home_url('/')); ?>"
+					class="inline-flex no-underline"
+					aria-label="<?php esc_attr_e('Idiom Digital home', 'idiom-digital'); ?>">
+					<img
+						src="<?php echo esc_url(get_template_directory_uri() . '/assets/brand/logo/idiom-digital-logo-on-light.svg'); ?>"
+						alt="Idiom Digital"
+						class="block h-auto w-[140px] sm:w-[160px]">
+				</a>
 			</div>
 
 			<div class="lg:col-span-3 lg:col-start-7">
 				<nav
 					class="flex flex-col gap-3 text-base"
-					aria-label="<?php esc_attr_e( 'Footer navigation', 'idiom-digital' ); ?>"
-				>
-					<a class="no-underline transition-opacity hover:opacity-50" href="<?php echo esc_url( home_url( '/work' ) ); ?>">
+					aria-label="<?php esc_attr_e('Footer navigation', 'idiom-digital'); ?>">
+					<a class="no-underline transition-opacity hover:opacity-50" href="<?php echo esc_url(home_url('/work')); ?>">
 						Work
 					</a>
 
-					<a class="no-underline transition-opacity hover:opacity-50" href="<?php echo esc_url( home_url( '/services' ) ); ?>">
+					<a class="no-underline transition-opacity hover:opacity-50" href="<?php echo esc_url(home_url('/services')); ?>">
 						Services
 					</a>
 
-					<a class="no-underline transition-opacity hover:opacity-50" href="<?php echo esc_url( home_url( '/ventures' ) ); ?>">
+					<a class="no-underline transition-opacity hover:opacity-50" href="<?php echo esc_url(home_url('/ventures')); ?>">
 						Ventures
 					</a>
 
-					<a class="no-underline transition-opacity hover:opacity-50" href="<?php echo esc_url( home_url( '/about' ) ); ?>">
+					<a class="no-underline transition-opacity hover:opacity-50" href="<?php echo esc_url(home_url('/about')); ?>">
 						About
 					</a>
 
-					<a class="no-underline transition-opacity hover:opacity-50" href="<?php echo esc_url( home_url( '/contact' ) ); ?>">
+					<a class="no-underline transition-opacity hover:opacity-50" href="<?php echo esc_url(home_url('/contact')); ?>">
 						Contact
 					</a>
 				</nav>
@@ -60,15 +58,13 @@ if ( ! defined( 'ABSPATH' ) ) {
 				<div class="flex flex-col gap-3 text-base">
 					<a
 						href="#"
-						class="no-underline transition-opacity hover:opacity-50"
-					>
+						class="no-underline transition-opacity hover:opacity-50">
 						LinkedIn
 					</a>
 
 					<a
 						href="#"
-						class="no-underline transition-opacity hover:opacity-50"
-					>
+						class="no-underline transition-opacity hover:opacity-50">
 						Instagram
 					</a>
 				</div>
@@ -83,7 +79,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 			</p>
 
 			<p>
-				&copy; <?php echo esc_html( wp_date( 'Y' ) ); ?> Idiom Digital
+				&copy; <?php echo esc_html(wp_date('Y')); ?> Idiom Digital
 			</p>
 
 		</div>
@@ -94,4 +90,5 @@ if ( ! defined( 'ABSPATH' ) ) {
 </footer>
 
 </body>
+
 </html>
